@@ -86,6 +86,26 @@ input {
   line-height: 1;
 }
 
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(12px, 2vw, 28px);
+  margin-left: auto;
+}
+
+.site-nav a {
+  color: var(--muted);
+  font-size: clamp(16px, 1.2vw, 20px);
+  font-weight: 900;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.site-nav a:hover {
+  color: var(--champagne);
+}
+
 .header-cta,
 .primary-button,
 .secondary-button,
@@ -338,6 +358,53 @@ h1 {
   font-weight: 850;
 }
 
+.seo-links-section {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.72fr) minmax(340px, 1.28fr);
+  gap: clamp(28px, 5vw, 76px);
+  padding: clamp(72px, 9vw, 128px) clamp(20px, 6vw, 90px);
+  border-top: 1px solid var(--line);
+}
+
+.link-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.link-card {
+  display: flex;
+  min-height: 250px;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: clamp(22px, 2.4vw, 34px);
+  background: rgba(245, 235, 221, 0.06);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.link-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(251, 54, 64, 0.72);
+  background: rgba(245, 235, 221, 0.1);
+}
+
+.link-card span {
+  color: var(--red);
+  font-size: clamp(19px, 1.5vw, 24px);
+  font-weight: 950;
+}
+
+.link-card strong {
+  color: var(--champagne);
+  font-size: clamp(24px, 2.1vw, 34px);
+  line-height: 1.24;
+}
+
 .reservation-section {
   display: grid;
   grid-template-columns: minmax(320px, 0.85fr) minmax(340px, 1.15fr);
@@ -500,6 +567,194 @@ h1 {
   opacity: 0;
 }
 
+.page-hero {
+  position: relative;
+  min-height: 68svh;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 150px clamp(20px, 6vw, 90px) 72px;
+  isolation: isolate;
+}
+
+.page-hero .hero-overlay {
+  background:
+    linear-gradient(90deg, rgba(0, 15, 8, 0.97), rgba(0, 15, 8, 0.78) 48%, rgba(0, 15, 8, 0.28)),
+    linear-gradient(0deg, var(--night), rgba(0, 15, 8, 0.12) 40%, rgba(0, 15, 8, 0.38));
+}
+
+.page-hero-content {
+  width: min(980px, 100%);
+}
+
+.page-hero h1 {
+  max-width: 980px;
+  margin-bottom: 22px;
+  font-size: clamp(54px, 6.4vw, 98px);
+}
+
+.page-hero p:not(.eyebrow) {
+  max-width: 850px;
+  color: var(--muted);
+  font-size: clamp(25px, 2.6vw, 38px);
+  font-weight: 760;
+  line-height: 1.38;
+}
+
+.content-section,
+.process-section,
+.faq-section {
+  padding: clamp(72px, 9vw, 128px) clamp(20px, 6vw, 90px);
+}
+
+.content-section {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.72fr) minmax(340px, 1.28fr);
+  gap: clamp(32px, 6vw, 88px);
+  border-top: 1px solid var(--line);
+}
+
+.content-copy p,
+.process-list li,
+.faq-list p {
+  color: var(--muted);
+  font-size: clamp(24px, 2.35vw, 34px);
+  font-weight: 680;
+  line-height: 1.48;
+}
+
+.content-copy p:last-child,
+.faq-list p:last-child {
+  margin-bottom: 0;
+}
+
+.detail-list,
+.process-list,
+.faq-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.detail-list {
+  display: grid;
+  gap: 1px;
+  background: var(--line);
+}
+
+.detail-list li,
+.process-list li,
+.faq-list li {
+  background: var(--night);
+}
+
+.detail-list li {
+  display: grid;
+  grid-template-columns: minmax(130px, 0.34fr) minmax(0, 1fr);
+  gap: 20px;
+  padding: clamp(24px, 3.2vw, 42px) 0;
+}
+
+.detail-list strong,
+.process-list strong,
+.faq-list strong {
+  display: block;
+  color: var(--champagne);
+  font-size: clamp(24px, 2.2vw, 34px);
+  line-height: 1.22;
+}
+
+.detail-list span {
+  color: var(--muted);
+  font-size: clamp(23px, 2vw, 31px);
+  font-weight: 720;
+  line-height: 1.35;
+}
+
+.process-section {
+  border-top: 1px solid var(--line);
+  background:
+    linear-gradient(180deg, rgba(245, 235, 221, 0.045), rgba(245, 235, 221, 0)),
+    var(--night);
+}
+
+.process-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: clamp(28px, 5vw, 58px);
+  background: var(--line);
+}
+
+.process-list li {
+  min-height: 260px;
+  padding: clamp(26px, 3.4vw, 44px);
+}
+
+.process-list span {
+  display: block;
+  margin-bottom: 20px;
+  color: var(--red);
+  font-size: 24px;
+  font-weight: 950;
+}
+
+.faq-section {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.72fr) minmax(340px, 1.28fr);
+  gap: clamp(32px, 6vw, 88px);
+  border-top: 1px solid var(--line);
+}
+
+.faq-list {
+  display: grid;
+  gap: 34px;
+}
+
+.faq-list strong {
+  margin-bottom: 10px;
+}
+
+.page-cta {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.85fr) auto;
+  gap: 24px;
+  align-items: center;
+  padding: clamp(54px, 7vw, 88px) clamp(20px, 6vw, 90px);
+  border-top: 1px solid var(--line);
+  background: rgba(245, 235, 221, 0.06);
+}
+
+.page-cta h2 {
+  margin-bottom: 12px;
+  font-size: clamp(38px, 4.8vw, 72px);
+  line-height: 1.16;
+}
+
+.page-cta p {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: clamp(23px, 2.2vw, 32px);
+  font-weight: 720;
+}
+
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 24px;
+  align-items: center;
+  justify-content: center;
+  padding: 34px clamp(20px, 5vw, 72px);
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: clamp(17px, 1.35vw, 21px);
+  font-weight: 820;
+}
+
+.site-footer a:hover {
+  color: var(--champagne);
+}
+
 .modal {
   position: fixed;
   z-index: 60;
@@ -541,13 +796,26 @@ h1 {
 }
 
 @media (max-width: 1040px) {
+  .site-nav {
+    display: none;
+  }
+
   .trust-band {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .intro-section,
   .choice-section,
-  .reservation-section {
+  .reservation-section,
+  .seo-links-section,
+  .content-section,
+  .faq-section,
+  .page-cta {
+    grid-template-columns: 1fr;
+  }
+
+  .link-grid,
+  .process-list {
     grid-template-columns: 1fr;
   }
 
@@ -589,6 +857,11 @@ h1 {
     padding: 112px 18px 48px;
   }
 
+  .page-hero {
+    min-height: 72svh;
+    padding: 112px 18px 48px;
+  }
+
   .hero-overlay {
     background:
       linear-gradient(90deg, rgba(0, 15, 8, 0.98), rgba(0, 15, 8, 0.72) 58%, rgba(0, 15, 8, 0.38)),
@@ -617,6 +890,15 @@ h1 {
     width: 100%;
     min-height: 68px;
     font-size: 24px;
+  }
+
+  .link-card {
+    min-height: 190px;
+  }
+
+  .detail-list li {
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
 
   .trust-band,
