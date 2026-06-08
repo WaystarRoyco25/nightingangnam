@@ -4,6 +4,9 @@ const modalTitle = document.querySelector("#modal-title");
 const modalMessage = document.querySelector("#modal-message");
 const modalClose = document.querySelector("#modal-close");
 const submitButton = form?.querySelector(".submit-button");
+const arrivalDay = document.querySelector("#arrival-day");
+const arrivalTime = document.querySelector("#arrival-time");
+const arrivalDateTime = document.querySelector("#arrival-datetime");
 
 const endpoint = "https://formsubmit.co/ajax/sdfdsagtr25@gmail.com";
 const successMessage = "곧 담당 실장이 전화드릴 예정입니다. 휴대폰을 잘 확인해 주세요.";
@@ -25,6 +28,15 @@ function setSubmitting(isSubmitting) {
   submitButton.textContent = isSubmitting ? "전송 중입니다" : "지금 문의 보내기";
 }
 
+function syncArrivalDateTime() {
+  if (!arrivalDay || !arrivalTime || !arrivalDateTime) {
+    return;
+  }
+
+  arrivalDateTime.value =
+    arrivalDay.value && arrivalTime.value ? `${arrivalDay.value} ${arrivalTime.value}` : "";
+}
+
 function touchInvalidField() {
   const invalidField = form.querySelector(":invalid");
   if (invalidField) {
@@ -33,8 +45,12 @@ function touchInvalidField() {
 }
 
 if (form && modal && modalTitle && modalMessage && modalClose && submitButton) {
+  arrivalDay?.addEventListener("change", syncArrivalDateTime);
+  arrivalTime?.addEventListener("input", syncArrivalDateTime);
+
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
+    syncArrivalDateTime();
 
     if (!form.checkValidity()) {
       form.reportValidity();

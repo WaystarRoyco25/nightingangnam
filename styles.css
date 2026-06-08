@@ -46,7 +46,8 @@ a {
 }
 
 button,
-input {
+input,
+select {
   font: inherit;
 }
 
@@ -428,6 +429,10 @@ h1 {
   gap: 18px;
 }
 
+.arrival-grid {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.86fr) minmax(0, 0.72fr);
+}
+
 .field,
 .choice-field,
 .confirm-field {
@@ -445,8 +450,10 @@ h1 {
   line-height: 1.25;
 }
 
-.field input {
+.field input,
+.field select {
   width: 100%;
+  min-width: 0;
   min-height: 76px;
   border: 2px solid rgba(245, 235, 221, 0.24);
   border-radius: 8px;
@@ -457,7 +464,23 @@ h1 {
   outline: none;
 }
 
-.field input:focus {
+.field select {
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--champagne) 50%),
+    linear-gradient(135deg, var(--champagne) 50%, transparent 50%);
+  background-position:
+    calc(100% - 26px) 50%,
+    calc(100% - 17px) 50%;
+  background-size:
+    9px 9px,
+    9px 9px;
+  background-repeat: no-repeat;
+  padding-right: 48px;
+}
+
+.field input:focus,
+.field select:focus {
   border-color: var(--red);
   box-shadow: 0 0 0 5px rgba(251, 54, 64, 0.16);
 }
@@ -936,6 +959,7 @@ h1 {
   }
 
   .field input,
+  .field select,
   .segmented span {
     min-height: 72px;
   }
