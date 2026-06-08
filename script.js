@@ -47,6 +47,7 @@ function touchInvalidField() {
 if (form && modal && modalTitle && modalMessage && modalClose && submitButton) {
   arrivalDay?.addEventListener("change", syncArrivalDateTime);
   arrivalTime?.addEventListener("input", syncArrivalDateTime);
+  arrivalTime?.addEventListener("change", syncArrivalDateTime);
 
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
