@@ -8,7 +8,7 @@ const arrivalDay = document.querySelector("#arrival-day");
 const arrivalTime = document.querySelector("#arrival-time");
 const arrivalDateTime = document.querySelector("#arrival-datetime");
 
-const endpoint = "https://formsubmit.co/ajax/sdfdsagtr25@gmail.com";
+const endpoint = "https://formsubmit.co/ajax/233692d3c0fb7326a0d231ec6e700893";
 const successMessage = "곧 담당 실장이 전화드릴 예정입니다. 휴대폰을 잘 확인해 주세요.";
 const failureMessage = "전송이 원활하지 않습니다. 잠시 후 다시 시도해 주세요.";
 
